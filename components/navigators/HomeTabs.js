@@ -18,16 +18,16 @@ export default TabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         switch (routeName) {
-          case 'Home':
-            iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-            break;
+        case 'Home':
+          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+          break;
 
-          case 'List':
-            iconName = `ios-list${focused ? '-box' : ''}`;
-            break;
+        case 'List':
+          iconName = `ios-list${focused ? '-box' : ''}`;
+          break;
 
-          default:
-            iconName = `ios-help${focused ? '' : '-outline'}`;
+        default:
+          iconName = `ios-help${focused ? '' : '-outline'}`;
         }
 
         // You can return any component that you like here! We usually use an
