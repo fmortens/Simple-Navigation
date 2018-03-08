@@ -2,7 +2,11 @@ import React from 'react';
 
 import {
   FlatList,
-  StyleSheet
+  StyleSheet,
+  Modal,
+  View,
+  Text,
+  TouchableWithoutFeedback
 } from 'react-native';
 
 import {
@@ -15,6 +19,19 @@ export default class List extends React.Component {
     title: 'List'
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modalVisible: false,
+      selectedItem: {}
+    };
+
+    this.showItem = this.showItem.bind(this);
+    this.closeItem = this.closeItem.bind(this);
+    this.renderItem = this.renderItem.bind(this);
+  }
+
   componentWillMount() {
     this.listContent = Array
       .from({
@@ -26,8 +43,22 @@ export default class List extends React.Component {
       }));
   }
 
+  showItem(item) {
+    this.setState({
+      modalVisible: true,
+      selectedItem: item
+    });
+  }
+
+  closeItem() {
+    this.setState({
+      modalVisible: false,
+      selectedItem: {}
+    });
+  }
+
   renderItem({ item }) {
-    return <ListItem item={item} />;
+    return <ListItem item={item} handleClick={this.showItem} />;
   }
 
   renderListSeparator() {
@@ -36,18 +67,31 @@ export default class List extends React.Component {
 
   render() {
     return (
-      <FlatList
-        data={this.listContent}
-        ItemSeparatorComponent={this.renderListSeparator}
-        renderItem={this.renderItem}
-        style={styles.list}
-        initialNumToRender={20}
-        getItemLayout={(data, index) => ({
-          length: 50,
-          offset: 50 * index,
-          index
-        })}
-      />
+      <View>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+        >
+          <TouchableWithoutFeedback onPress={this.closeItem}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalViewText}>Now viewing: {this.state.selectedItem.name}</Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+        <FlatList
+          data={this.listContent}
+          ItemSeparatorComponent={this.renderListSeparator}
+          renderItem={this.renderItem}
+          style={styles.list}
+          initialNumToRender={10}
+          getItemLayout={(data, index) => ({
+            length: 100,
+            offset: 100 * index,
+            index
+          })}
+        />
+      </View>
     );
   }
 }
@@ -55,5 +99,16 @@ export default class List extends React.Component {
 const styles = StyleSheet.create({
   list: {
     backgroundColor: '#fefefe'
+  },
+  modalView: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+    alignContent: 'center',
+    justifyContent: 'center'
+  },
+  modalViewText: {
+    fontSize: 26,
+    textAlign: 'center'
   }
 });
