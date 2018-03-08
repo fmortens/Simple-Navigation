@@ -6,14 +6,22 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-const ListItem = ({ item }) => (
-  <View style={styles.listItem}>
-    <View style={styles.listItemHead}>
-      <Text style={styles.listItemHeadText}>{item.index}</Text>
-    </View>
-    <Text style={styles.listItemText}>{item.name}</Text>
-  </View>
-);
+export default class ListItem extends React.PureComponent {
+  render() {
+    const {
+      item
+    } = this.props;
+
+    return (
+      <View style={styles.listItem}>
+        <View style={styles.listItemHead}>
+          <Text style={styles.listItemHeadText}>{item.key}</Text>
+        </View>
+        <Text style={styles.listItemText}>{item.name}</Text>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   listItem: {
@@ -39,9 +47,7 @@ const styles = StyleSheet.create({
 
 ListItem.propTypes = {
   item: PropTypes.shape({
-    index: PropTypes.number.isRequired,
+    key: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired
   }).isRequired
 };
-
-export default ListItem;

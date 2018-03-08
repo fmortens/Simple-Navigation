@@ -18,10 +18,10 @@ export default class List extends React.Component {
   componentWillMount() {
     this.listContent = Array
       .from({
-        length: 20
+        length: 100
       })
       .map((item, index) => ({
-        index,
+        key: index,
         name: `Item ${index}`,
       }));
   }
@@ -39,9 +39,14 @@ export default class List extends React.Component {
       <FlatList
         data={this.listContent}
         ItemSeparatorComponent={this.renderListSeparator}
-        keyExtractor={(item, index) => index}
         renderItem={this.renderItem}
         style={styles.list}
+        initialNumToRender={20}
+        getItemLayout={(data, index) => ({
+          length: 50,
+          offset: 50 * index,
+          index
+        })}
       />
     );
   }
