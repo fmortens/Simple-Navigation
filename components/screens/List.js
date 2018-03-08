@@ -39,7 +39,7 @@ export default class List extends React.Component {
       })
       .map((item, index) => ({
         key: index,
-        name: `Item ${index}`,
+        name: `Item #${index + 1}`,
       }));
   }
 
@@ -84,7 +84,7 @@ export default class List extends React.Component {
           ItemSeparatorComponent={this.renderListSeparator}
           renderItem={this.renderItem}
           style={styles.list}
-          initialNumToRender={10}
+          initialNumToRender={6}
           getItemLayout={(data, index) => ({
             length: 100,
             offset: 100 * index,
