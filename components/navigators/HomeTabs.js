@@ -42,10 +42,7 @@ function ScreenTabBarIcon({
   tintColor,
 }) {
   const iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-
-  // You can return any component that you like here! We usually use an
-  // icon component from react-native-vector-icons
-  return <Ionicons color={tintColor} name={iconName} size={32} />;
+  return getIconByTab(tintColor, iconName);
 }
 
 function ListTabBarIcon({
@@ -53,7 +50,10 @@ function ListTabBarIcon({
   tintColor,
 }) {
   const iconName = `ios-list${focused ? '-box' : ''}`;
+  return getIconByTab(tintColor, iconName);
+}
 
+function getIconByTab(tintColor, iconName) {
   // You can return any component that you like here! We usually use an
   // icon component from react-native-vector-icons
   return <Ionicons color={tintColor} name={iconName} size={32} />;
