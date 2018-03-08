@@ -1,22 +1,27 @@
 import React from 'react';
-import { Button, SafeAreaView, StyleSheet, Text } from 'react-native';
+import {
+  Button, SafeAreaView, StyleSheet, Text
+} from 'react-native';
 
 export default class Home extends React.Component {
-  static navigationOptions = {
-    title: 'Home',
-  };
+  static navigationOptions = { title: 'Home' };
 
   render() {
     const { navigation: { navigate } } = this.props;
 
-    const test = 4 + 5 + 5;
+    let test,
+      test2,
+      test3;
 
-    const testArray = [1, 2, 3, 4, 5, 6];
+    const test4 = 4 + 5 + 5;
+
+    const testArray = [
+      1, 2, 3,
+    ];
 
     const newObject = {
       a: 'a.m.',
       b: 'p.m.',
-      c: 'daylight saving time',
     };
 
     return (

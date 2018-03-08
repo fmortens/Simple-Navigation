@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, SafeAreaView, StyleSheet, Text } from 'react-native';
+import {
+  Button, SafeAreaView, StyleSheet, Text
+} from 'react-native';
 
 export default class Settings extends React.Component {
   static navigationOptions = { title: 'Settings' };

@@ -1,20 +1,22 @@
 import React from 'react';
-import { TabBarBottom, TabNavigator } from 'react-navigation';
+import {
+  TabBarBottom, TabNavigator
+} from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
-import { Home, List } from '../screens';
+import {
+  Home, List
+} from '../screens';
 
 export default TabNavigator(
   {
-    Home: {
-      screen: Home,
-    },
-    List: {
-      screen: List,
-    },
+    Home: { screen: Home },
+    List: { screen: List },
   },
   {
     navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor }) => {
+      tabBarIcon: ({
+        focused, tintColor,
+      }) => {
         const { routeName } = navigation.state;
         let iconName;
         switch (routeName) {
@@ -43,5 +45,5 @@ export default TabNavigator(
     tabBarPosition: 'bottom',
     animationEnabled: false,
     swipeEnabled: false,
-  },
+  }
 );

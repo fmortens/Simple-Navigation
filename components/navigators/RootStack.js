@@ -4,16 +4,10 @@ import { Settings } from '../screens';
 
 const RootStack = StackNavigator(
   {
-    Main: {
-      screen: HomeTabs,
-    },
-    Settings: {
-      screen: Settings,
-    },
+    Main: { screen: HomeTabs },
+    Settings: { screen: Settings },
   },
-  {
-    initialRouteName: 'Main',
-  },
+  { initialRouteName: 'Main' }
 );
 
 export default RootStack;
