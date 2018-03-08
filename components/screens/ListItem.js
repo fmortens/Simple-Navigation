@@ -28,11 +28,13 @@ export default class ListItem extends React.PureComponent {
       item,
     } = this.props;
 
+    const itemStyle = item.key % 2 ? styles.oddItem : styles.evenItem;
+
     return (
       <TouchableHighlight onPress={this.handleClick}>
-        <View style={styles.listItem}>
-          <View style={styles.listItemHead}>
-            <Text style={styles.listItemHeadText}>{item.key}</Text>
+        <View style={itemStyle}>
+          <View style={styles.itemHead}>
+            <Text style={styles.itemHeadText}>{item.key}</Text>
           </View>
           <Text style={styles.listItemText}>{item.name}</Text>
         </View>
@@ -42,14 +44,21 @@ export default class ListItem extends React.PureComponent {
 }
 
 const styles = StyleSheet.create({
-  listItem: {
+  evenItem: {
     flex: 1,
     alignItems: 'center',
     minHeight: 100,
     flexDirection: 'row',
     backgroundColor: '#fff',
   },
-  listItemHead: {
+  oddItem: {
+    flex: 1,
+    alignItems: 'center',
+    minHeight: 100,
+    flexDirection: 'row',
+    backgroundColor: '#efefef',
+  },
+  itemHead: {
     height: '100%',
     width: 100,
     borderColor: '#ddd',
@@ -57,13 +66,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  listItemHeadText: {
-    fontSize: 50
+  itemHeadText: {
+    fontSize: 70
   },
   listItemText: {
     flex: 1,
     padding: 5,
-    fontSize: 24
+    fontSize: 48
   }
 });
 
