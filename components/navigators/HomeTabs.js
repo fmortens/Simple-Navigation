@@ -1,42 +1,27 @@
 import React from 'react';
 import {
-  TabBarBottom, TabNavigator
+  TabBarBottom,
+  TabNavigator
 } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 import {
-  Home, List
+  Home,
+  List
 } from '../screens';
+import PropTypes from 'prop-types';
 
 export default TabNavigator(
   {
-    Home: { screen: Home },
-    List: { screen: List },
+    Home: {
+      screen: Home,
+      navigationOptions: () => ({ tabBarIcon: ScreenTabBarIcon }),
+    },
+    List: {
+      screen: List,
+      navigationOptions: () => ({ tabBarIcon: ListTabBarIcon }),
+    },
   },
   {
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({
-        focused, tintColor,
-      }) => {
-        const { routeName } = navigation.state;
-        let iconName;
-        switch (routeName) {
-        case 'Home':
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-          break;
-
-        case 'List':
-          iconName = `ios-list${focused ? '-box' : ''}`;
-          break;
-
-        default:
-          iconName = `ios-help${focused ? '' : '-outline'}`;
-        }
-
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
-        return <Ionicons color={tintColor} name={iconName} size={32} />;
-      },
-    }),
     tabBarOptions: {
       activeTintColor: 'black',
       inactiveTintColor: 'darkgray',
@@ -47,3 +32,35 @@ export default TabNavigator(
     swipeEnabled: false,
   }
 );
+
+function ScreenTabBarIcon({
+  focused,
+  tintColor,
+}) {
+  const iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+
+  // You can return any component that you like here! We usually use an
+  // icon component from react-native-vector-icons
+  return <Ionicons color={tintColor} name={iconName} size={32} />;
+}
+
+function ListTabBarIcon({
+  focused,
+  tintColor,
+}) {
+  const iconName = `ios-list${focused ? '-box' : ''}`;
+
+  // You can return any component that you like here! We usually use an
+  // icon component from react-native-vector-icons
+  return <Ionicons color={tintColor} name={iconName} size={32} />;
+}
+
+ScreenTabBarIcon.propTypes = {
+  focused: PropTypes.bool.isRequired,
+  tintColor: PropTypes.string.isRequired,
+};
+
+ListTabBarIcon.propTypes = {
+  focused: PropTypes.bool.isRequired,
+  tintColor: PropTypes.string.isRequired,
+};
