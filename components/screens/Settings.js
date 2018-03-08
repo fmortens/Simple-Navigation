@@ -2,9 +2,12 @@ import React from 'react';
 import {
   Button, SafeAreaView, StyleSheet, Text
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class Settings extends React.Component {
-  static navigationOptions = { title: 'Settings' };
+  static navigationOptions = {
+    title: 'Settings'
+  };
 
   render() {
     const { navigation: { goBack } } = this.props;
@@ -27,3 +30,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+Settings.propTypes = {
+  navigation: PropTypes.shape({
+    goBack: PropTypes.func
+  }).isRequired
+};

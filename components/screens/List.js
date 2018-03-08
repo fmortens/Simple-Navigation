@@ -4,7 +4,9 @@ import {
 } from 'react-native';
 
 export default class List extends React.Component {
-  static navigationOptions = { title: 'List' };
+  static navigationOptions = {
+    title: 'List'
+  };
 
   constructor(props) {
     super(props);
@@ -12,7 +14,9 @@ export default class List extends React.Component {
   }
 
   componentWillMount() {
-    this.listContent = Array.from({ length: 10 }).map((item, index) => ({
+    this.listContent = Array.from({
+      length: 10
+    }).map((item, index) => ({
       index,
       name: `Item ${index}`,
     }));
@@ -52,7 +56,9 @@ export default class List extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  list: { backgroundColor: '#fefefe' },
+  list: {
+    backgroundColor: '#fefefe'
+  },
   listItem: {
     alignItems: 'center',
     minHeight: 50,
@@ -65,7 +71,9 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     borderRightWidth: 1,
   },
-  listItemText: {},
+  listItemText: {
+
+  },
   listSeparator: {
     height: 1,
     backgroundColor: '#ddd',

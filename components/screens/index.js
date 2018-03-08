@@ -3,5 +3,7 @@ import Home from './Home';
 import List from './List';
 
 export {
-  Settings, Home, List
+  Settings,
+  Home,
+  List
 };

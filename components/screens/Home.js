@@ -2,27 +2,15 @@ import React from 'react';
 import {
   Button, SafeAreaView, StyleSheet, Text
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class Home extends React.Component {
-  static navigationOptions = { title: 'Home' };
+  static navigationOptions = {
+    title: 'Home'
+  };
 
   render() {
     const { navigation: { navigate } } = this.props;
-
-    let test,
-      test2,
-      test3;
-
-    const test4 = 4 + 5 + 5;
-
-    const testArray = [
-      1, 2, 3,
-    ];
-
-    const newObject = {
-      a: 'a.m.',
-      b: 'p.m.',
-    };
 
     return (
       <SafeAreaView style={styles.container}>
@@ -46,3 +34,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+Home.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func
+  }).isRequired
+};

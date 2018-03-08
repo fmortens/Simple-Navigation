@@ -14,11 +14,15 @@ export default TabNavigator(
   {
     Home: {
       screen: Home,
-      navigationOptions: () => ({ tabBarIcon: ScreenTabBarIcon }),
+      navigationOptions: () => ({
+        tabBarIcon: ScreenTabBarIcon
+      }),
     },
     List: {
       screen: List,
-      navigationOptions: () => ({ tabBarIcon: ListTabBarIcon }),
+      navigationOptions: () => ({
+        tabBarIcon: ListTabBarIcon
+      }),
     },
   },
   {
