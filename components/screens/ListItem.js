@@ -17,6 +17,7 @@ const ListItem = ({ item }) => (
 
 const styles = StyleSheet.create({
   listItem: {
+    flex: 1,
     alignItems: 'center',
     minHeight: 50,
     flexDirection: 'row',
@@ -27,9 +28,12 @@ const styles = StyleSheet.create({
     width: 50,
     borderColor: '#ddd',
     borderRightWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   listItemText: {
-
+    flex: 1,
+    padding: 5
   }
 });
 
