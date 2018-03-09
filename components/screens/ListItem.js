@@ -37,25 +37,30 @@ export default class ListItem extends React.PureComponent {
   }
 }
 
+const black = '#000';
+const white = '#fff';
+const gray = '#efefef';
+const gray2 = '#ddd';
+
 const styles = StyleSheet.create({
   evenItem: {
     flex: 1,
     alignItems: 'center',
     minHeight: 100,
     flexDirection: 'row',
-    backgroundColor: '#fff'
+    backgroundColor: white
   },
   oddItem: {
     flex: 1,
     alignItems: 'center',
     minHeight: 100,
     flexDirection: 'row',
-    backgroundColor: '#efefef'
+    backgroundColor: gray
   },
   itemHead: {
     height: '100%',
     width: 100,
-    borderColor: '#ddd',
+    borderColor: gray2,
     borderRightWidth: 1,
     alignItems: 'center',
     justifyContent: 'center'

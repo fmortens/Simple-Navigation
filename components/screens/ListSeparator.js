@@ -5,10 +5,11 @@ import {
 } from 'react-native';
 
 export default () => <View style={styles.listSeparator} />;
+const gray = '#ddd';
 
 const styles = StyleSheet.create({
   listSeparator: {
     height: 1,
-    backgroundColor: '#ddd'
+    backgroundColor: gray
   }
 });

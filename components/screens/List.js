@@ -93,14 +93,18 @@ export default class List extends React.Component {
   }
 }
 
+const black = '#000';
+const white = '#fff';
+const gray = '#fefefe';
+
 const styles = StyleSheet.create({
   list: {
-    backgroundColor: '#fefefe'
+    backgroundColor: gray
   },
   modalView: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#fff',
+    backgroundColor: white,
     alignContent: 'center',
     justifyContent: 'center'
   },
