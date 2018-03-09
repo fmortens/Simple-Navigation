@@ -9,12 +9,8 @@ const RootStack = StackNavigator(
       navigationOptions: {
         headerTitle: 'Home',
         headerTintColor: '#000',
-        headerStyle: {
-          backgroundColor: '#eee',
-        },
-        headerTitleStyle: {
-          fontSize: 30
-        }
+        headerStyle: { backgroundColor: '#eee' },
+        headerTitleStyle: { fontSize: 30 }
       }
     },
     Settings: {
@@ -22,14 +18,10 @@ const RootStack = StackNavigator(
       navigationOptions: {
         headerTitle: 'Settings',
         headerTintColor: '#000',
-        headerStyle: {
-          backgroundColor: '#eee',
-        },
-        headerTitleStyle: {
-          fontSize: 30
-        }
+        headerStyle: { backgroundColor: '#eee' },
+        headerTitleStyle: { fontSize: 30 }
       }
-    },
+    }
   },
   {
     initialRouteName: 'Main',

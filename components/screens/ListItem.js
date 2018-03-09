@@ -15,19 +15,13 @@ export default class ListItem extends React.PureComponent {
   }
 
   handleClick() {
-    const {
-      item,
-      handleClick,
-    } = this.props;
+    const { item, handleClick } = this.props;
 
     handleClick(item);
   }
 
   render() {
-    const {
-      item,
-    } = this.props;
-
+    const { item } = this.props;
     const itemStyle = item.key % 2 ? styles.oddItem : styles.evenItem;
 
     return (
@@ -49,14 +43,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     minHeight: 100,
     flexDirection: 'row',
-    backgroundColor: '#fff',
+    backgroundColor: '#fff'
   },
   oddItem: {
     flex: 1,
     alignItems: 'center',
     minHeight: 100,
     flexDirection: 'row',
-    backgroundColor: '#efefef',
+    backgroundColor: '#efefef'
   },
   itemHead: {
     height: '100%',
@@ -66,9 +60,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  itemHeadText: {
-    fontSize: 70
-  },
+  itemHeadText: { fontSize: 70 },
   listItemText: {
     flex: 1,
     padding: 5,

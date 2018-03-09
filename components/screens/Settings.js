@@ -1,6 +1,9 @@
 import React from 'react';
 import {
-  Button, SafeAreaView, StyleSheet, Text
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Text
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -10,7 +13,9 @@ export default class Settings extends React.Component {
   };
 
   render() {
-    const { navigation: { goBack } } = this.props;
+    const {
+      navigation: { goBack }
+    } = this.props;
 
     return (
       <SafeAreaView style={styles.container}>
@@ -27,8 +32,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
 
 Settings.propTypes = {

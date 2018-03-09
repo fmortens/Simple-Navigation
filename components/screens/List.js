@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   FlatList,
   StyleSheet,
@@ -8,16 +7,13 @@ import {
   Text,
   TouchableWithoutFeedback
 } from 'react-native';
-
 import {
   ListItem,
   ListSeparator
 } from './';
 
 export default class List extends React.Component {
-  static navigationOptions = {
-    title: 'List'
-  };
+  static navigationOptions = { title: 'List' };
 
   constructor(props) {
     super(props);
@@ -33,13 +29,12 @@ export default class List extends React.Component {
   }
 
   componentWillMount() {
-    this.listContent = Array
-      .from({
-        length: 100
-      })
+    this.listContent = Array.from({
+      length: 100
+    })
       .map((item, index) => ({
         key: index,
-        name: `Item #${index + 1}`,
+        name: `Item #${index + 1}`
       }));
   }
 
@@ -75,7 +70,9 @@ export default class List extends React.Component {
         >
           <TouchableWithoutFeedback onPress={this.closeItem}>
             <View style={styles.modalView}>
-              <Text style={styles.modalViewText}>Now viewing: {this.state.selectedItem.name}</Text>
+              <Text style={styles.modalViewText}>
+                Now viewing: {this.state.selectedItem.name}
+              </Text>
             </View>
           </TouchableWithoutFeedback>
         </Modal>

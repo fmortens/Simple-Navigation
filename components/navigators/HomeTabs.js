@@ -16,39 +16,33 @@ export default TabNavigator(
       screen: Home,
       navigationOptions: () => ({
         tabBarIcon: ScreenTabBarIcon
-      }),
+      })
     },
     List: {
       screen: List,
       navigationOptions: () => ({
         tabBarIcon: ListTabBarIcon
-      }),
-    },
+      })
+    }
   },
   {
     tabBarOptions: {
       activeTintColor: 'black',
-      inactiveTintColor: 'darkgray',
+      inactiveTintColor: 'darkgray'
     },
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
     animationEnabled: false,
-    swipeEnabled: false,
+    swipeEnabled: false
   }
 );
 
-function ScreenTabBarIcon({
-  focused,
-  tintColor,
-}) {
+function ScreenTabBarIcon({ focused, tintColor }) {
   const iconName = `ios-information-circle${focused ? '' : '-outline'}`;
   return getIconByTab(tintColor, iconName);
 }
 
-function ListTabBarIcon({
-  focused,
-  tintColor,
-}) {
+function ListTabBarIcon({ focused, tintColor }) {
   const iconName = `ios-list${focused ? '-box' : ''}`;
   return getIconByTab(tintColor, iconName);
 }
@@ -61,10 +55,10 @@ function getIconByTab(tintColor, iconName) {
 
 ScreenTabBarIcon.propTypes = {
   focused: PropTypes.bool.isRequired,
-  tintColor: PropTypes.string.isRequired,
+  tintColor: PropTypes.string.isRequired
 };
 
 ListTabBarIcon.propTypes = {
   focused: PropTypes.bool.isRequired,
-  tintColor: PropTypes.string.isRequired,
+  tintColor: PropTypes.string.isRequired
 };

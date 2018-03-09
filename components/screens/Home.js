@@ -1,6 +1,9 @@
 import React from 'react';
 import {
-  Button, SafeAreaView, StyleSheet, Text
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Text
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -10,7 +13,9 @@ export default class Home extends React.Component {
   };
 
   render() {
-    const { navigation: { navigate } } = this.props;
+    const {
+      navigation: { navigate }
+    } = this.props;
 
     return (
       <SafeAreaView style={styles.container}>
@@ -31,8 +36,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
 
 Home.propTypes = {
